@@ -26,21 +26,21 @@ app.post('/calculate', (req, res) => {
     }
 
     const per_credit_const = 2200;
-    const semister_cost = 5500;
+    const semester_cost = 5500;
 
     const credit_cost = total_credit * per_credit_const;
     const waiver_new_cost = credit_cost * (total_waiver * 0.01);
 
     const new_cost = credit_cost - waiver_new_cost;
 
-    const add_semister_cost = new_cost + semister_cost;
+    const add_semester_cost = new_cost + semester_cost;
 
     res.status(200).json({
         success: true,
         data : {
             per_credit_const,
-            semister_cost,
-            total_cost : add_semister_cost,
+            semester_cost,
+            total_cost : add_semester_cost,
         }
     });
 });
